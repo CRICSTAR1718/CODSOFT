@@ -1,0 +1,35 @@
+//TASK 1
+//NUMBER GUESSING GAME
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+  //reseting the random number
+  srand(time(NULL));
+  //randomly generating a number between 1 to 100
+  int number=rand() % 100;
+  int no_of_guesses=0;
+  int guess;
+  cout<<"WELCOME to the ULTIMATE NUMBER GUESSING GAME!!!"<<endl;
+  do
+    {
+      cout<<"Enter your guess : ";
+      cin>>guess;
+      no_of_guesses++;
+      if(guess>number)
+      {
+        cout<<"Too High!! TRY AGAIN!!"<<endl;
+      }
+      else if(guess<number)
+      {
+        cout<<"Too Low!! TRY AGAIN!!"<<endl;
+      }
+      else
+      {
+        cout<<"That's it!! Congratulations!! You have guessed the correct number in "<<no_of_guesses<<" attempts"<<endl;
+        break;
+      }
+    }while(no_of_guesses <number);
+}
