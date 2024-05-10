@@ -1,0 +1,33 @@
+//TASK 2
+//SIMPLE CALCULATOR
+#include<iostream>
+using namespace std;
+int main()
+{
+  int a, b; //declarartion of two variable
+  cout<<"Enter two numbers : ";
+  cin>>a>>b;  //reading two numbers
+  char symbol;  //declaring variable for operator
+  cout<<"Enter operator : ";  //reading the operator
+  cin>>symbol;
+  switch(symbol)
+    {
+      case '+':
+      cout<<"The sum is : "<<a+b<<endl;
+      break;
+      case '-':
+      cout<<"The difference is : "<<a-b<<endl;
+      break;
+      case '*':
+      cout<<"The product is : "<<a*b<<endl;
+      break;
+      case '/':
+      cout<<"The quotient is : "<<a/b<<endl;
+      break;
+      case '%':
+      cout<<"The remainder is : "<<a%b<<endl;
+      break;
+      default:
+      cout<<"Enter a valid operator"<<endl;
+    }
+}
