@@ -1,0 +1,114 @@
+//TASK 4
+//TO DO LIST
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace  std;
+class todo{
+vector<string>list;
+string a;
+public:
+void create()
+{
+  int n;
+  cout<<"Enter the number of task you wish to add to the list: ";
+  cin>>n;
+  cin.ignore();
+  string s;
+  for (int i=0; i<n; i++)
+    {
+     getline(cin, s);
+      list.insert(list.begin()+i,s);
+    }    
+}
+void add()
+{
+cout<<"Enter the task you want to add : ";
+cin.ignore();
+getline(cin,a);
+list.push_back(a);
+}
+void display()
+{
+  cout<<"The tasks are : "<<endl;
+  for(int i=0; i<list.size(); i++)
+    {
+      cout<<i+1<<". "<<list[i]<<endl;
+    }
+}
+void complete()
+{
+  int c;
+  display();
+  cout<<"Which task is to be marked as completed?\n";
+  cin>>c;
+  if(c>0 && c<=list.size())
+  {
+    list.erase(list.begin() + c-1);
+    cout<<"Task marked as completed\n";
+  }
+  else 
+  {
+    cout<<"Enter valid index\n";
+  }
+}
+void remove()
+{
+  display();
+  cout<<"Which task is to be removed?\n";
+  int r;
+  cin>>r;
+  if(r>0 && r<=list.size())
+  {
+    list.erase(list.begin()+ r-1);
+    cout<<"Task removed successfully\n";
+  }
+  else
+  {
+    cout<<"Enter valid index\n";
+  }
+}
+};
+int main()
+{
+  int choice;
+  todo t;
+  cout<<"----TO DO LIST----"<<endl;
+  cout<<"What do you want to do??\n";
+  cout<<"1. Create a TO DO List\n";
+  cout<<"2. Add a task\n";
+  cout<<"3. Display tasks\n";
+  cout<<"4. Mark tasks as completed\n";
+  cout<<"5. Remove a task\n";
+  cout<<"6. Exit the lsit\n";
+  do{
+  cout<<"Enter your choice: ";
+  cin>>choice;
+    if(choice==1)
+      {
+        t.create();
+      }
+  
+    else if(choice==2)
+      {
+        t.add();
+      }
+  
+    else if(choice==3)
+      {
+        t.display();
+      }
+    else if(choice==4)
+      {
+        t.complete();
+      }
+    else if(choice==5)
+      {
+        t.remove();
+      }
+    else
+    {
+      break;
+    }
+  }while(choice !=6);
+}
