@@ -15,7 +15,7 @@ int main()
   cout<<"WELCOME to the ULTIMATE NUMBER GUESSING GAME!!!"<<endl;
   do
     {
-      cout<<"Enter your guess : ";
+      cout<<"Guess a number between 1 to 100 : ";
       cin>>guess;
       no_of_guesses++;
       if(guess>number)
@@ -27,9 +27,16 @@ int main()
         cout<<"Too Low!! TRY AGAIN!!"<<endl;
       }
       else
-      {
+      {  if(guess==number)
+         {
         cout<<"That's it!! Congratulations!! You have guessed the correct number in "<<no_of_guesses<<" attempts"<<endl;
         break;
+        }
+        else
+        {
+          cout<<"You surpassed your number of attempts. Game Over!! Try Again!!";
+        }
+        
       }
     }while(no_of_guesses <number);
 }
